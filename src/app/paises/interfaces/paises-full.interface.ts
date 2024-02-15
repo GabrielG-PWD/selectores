@@ -18,7 +18,7 @@ export interface Pais {
   translations: { [key: string]: Translation };
   latlng: number[];
   landlocked: boolean;
-  borders: string[];
+  borders?: string[];
   area: number;
   demonyms: Demonyms;
   flag: string;
@@ -33,6 +33,7 @@ export interface Pais {
   coatOfArms: CoatOfArms;
   startOfWeek: string;
   capitalInfo: CapitalInfo;
+  postalCode: PostalCode;
 }
 
 export interface CapitalInfo {
@@ -50,10 +51,10 @@ export interface CoatOfArms {
 }
 
 export interface Currencies {
-  COP: Cop;
+  ARS: Ars;
 }
 
-export interface Cop {
+export interface Ars {
   name: string;
   symbol: string;
 }
@@ -84,6 +85,7 @@ export interface Idd {
 }
 
 export interface Languages {
+  grn: string;
   spa: string;
 }
 
@@ -99,10 +101,16 @@ export interface Name {
 }
 
 export interface NativeName {
+  grn: Translation;
   spa: Translation;
 }
 
 export interface Translation {
   official: string;
   common: string;
+}
+
+export interface PostalCode {
+  format: string;
+  regex: string;
 }
